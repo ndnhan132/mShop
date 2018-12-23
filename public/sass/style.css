@@ -41,5 +41,7 @@ body {
     height: 34px;
     display: -webkit-box;
     -webkit-box-orient: vertical; }
+  .banner__bot--highlight p {
+    font-weight: bold !important; }
 
 /*# sourceMappingURL=style.css.map */

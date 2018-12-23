@@ -11,19 +11,28 @@ $(document).ready(function($) {
 	$('.js-setItemWidth_1-4').width($('.banner__bot').width()/4-1);
 	$('.js-setItemWidth').width($('.banner__bot').width());
 
-	//https://www.codeply.com/go/FrzoIEKCdH/bootstrap-4-carousel-multiple
-	// $('#recipeCarousel').carousel({
-	// 	interval: 10000000000000000000
-	// })
-
 	$('#js-carouselTopSlideControls').carousel({
 		interval: false
 	});
+	$('#js-descriptionSlide').carousel({
+		interval: false
+	});
+	$('#js-carouselTopSlideControls').on('slid.bs.carousel', function() {
+		var i = $('#js-carouselTopSlideControls .active').attr('id');
+		// $('#js-descriptionSlide p').removeClass('font-weight-bold');
+		$('#js-descriptionSlide .js-item').each(function(){
+			
+			$(this).removeClass('active');
+			if($(this).attr('id') === ('js-' +i)){
+				$(this).addClass('active');
+				var id ="#js-descriptionSlide .active div #js-des-" + i;
+				$(id).parent().addClass('banner__bot--highlight border');
+			}
+		});
+
+	});
 
 	$('#js-descriptionSlide .js-item').each(function(){
-		// if($(this 'div').hasClass('active')){
-		// 	$('.js-item p').addClass('font-weight-bold');
-		// }
 		var next = $(this).next();
 		if (!next.length) {
 			next = $(this).siblings(':first');
@@ -38,7 +47,12 @@ $(document).ready(function($) {
 		}
 	});
 
-	// $('#js-carouselTopSlideControls')
+	$('#js-carouselTopSlideControls .banner__top__item').each(function(){
+		if($(this).hasClass('active')){
+			console.log($(this).attr('id'));
+		}
+	});
+
 
 
 });

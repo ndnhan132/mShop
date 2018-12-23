@@ -34,7 +34,7 @@ class ImagesTableSeeder extends Seeder
     	});
     	//---------------------------------------------
     	$productImages = []; 
-		$dir = "/var/www/html/MobileShop/public/img/mobile-image";
+		$dir =  public_path() ."\img\mobile-image";
 		$files = File::files($dir);
 		foreach ($files as $f) {
 		 	# code...
@@ -51,7 +51,7 @@ class ImagesTableSeeder extends Seeder
 		 }
          //-------------------------------------
         $bannerImages = []; 
-        $dir = "/var/www/html/MobileShop/public/img/banner";
+        $dir = public_path()."\img\banner";
         $files = File::files($dir);
         foreach ($files as $f) {
             # code...
