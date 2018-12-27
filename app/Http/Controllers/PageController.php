@@ -9,37 +9,31 @@ use App\Product;
 use App\Brand;
 use App\Image;
 use App\Banner;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
     //
     public function __construct(){
-		// $products   = Product::with('banners')->get();
-		$categories = Category::with('brands')->get();
-		$brands     = Brand::all();
-		// $banners     = Banner::all();
-		// $images     = Image::all();
+    	$categories = Category::with('products.brand.images')->get();
 		view()->share('categories', $categories);
-		// view()->share('products', $products);
-		view()->share('brands', $brands);
-		// view()->share('images', $images);
-		// view()->share('banners', $banner);
 	}
 	public function index(){
-		// $products = Product::select('id')
-		// 					->where('top' ,true)
-		// 					->get()
-		// 					->toArray();
-		$topBanners = Banner::has('images')
-							// ->whereIn('product_id', $products)
+		$homeBanners = Banner::has('images')
 							->join('products', function($join){
-								$join->on('banners.product_id', '=' , 'products.id')
-									 ->where('products.top', true);
-							})
+							$join->on('banners.product_id', '=' , 'products.id')
+							->where('products.top', true);
+		})
 							->inRandomOrder()
 							->take(5)
 							->get();
-		return view('front.index',['topBanners' => $topBanners]);
+		$homeHotProducts = Product::has('images')
+									->where('hot', true)
+									->inRandomOrder()
+									->get();
+		return view('front.index',['homeBanners' => $homeBanners,
+									'homeHotProducts'=> $homeHotProducts,
+									]);
 	}
 	public function abc(){
 		return view('welcome');

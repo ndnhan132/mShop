@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     //
-    public function categories(){
-    	return $this->belongsToMany('App\Brand');
-    }
+    // public function categories(){
+    // 	return $this->belongsToMany('App\Category');
+    // }
     public function products(){
     	return $this->hasMany('App\Product');
     }

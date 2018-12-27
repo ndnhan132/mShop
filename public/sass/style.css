@@ -1,7 +1,6 @@
 body {
-  font-family: sans-serif;
-  background: #eee; }
-
+  background: #eee;
+  font: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif; }
 .navigation__item {
   border-color: #8FBC8F !important;
   position: relative; }
@@ -27,21 +26,86 @@ body {
   .navigation__item:hover ul {
     display: block; }
 
-.banner__bot {
+.homeBanner__description {
   list-style-type: none;
-  overflow: hidden;
-  transition: all 200ms ease 0s;
-  transform: translate3d(0px, 0px, 0px); }
-  .banner__bot p {
-    font-size: 12px;
+  overflow-y: hidden; }
+  .homeBanner__description li div a {
+    font-size: 13px;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 17px;
+    line-height: 19px;
     -webkit-line-clamp: 2;
-    height: 34px;
+    height: 38px;
     display: -webkit-box;
     -webkit-box-orient: vertical; }
-  .banner__bot--highlight p {
-    font-weight: bold !important; }
+
+.home-hot-product {
+  border: 5px solid transparent;
+  border-image: url("/img/khung-noel.png") 5 round; }
+  .home-hot-product__header img {
+    width: 108.0%;
+    margin-top: -30px;
+    margin-left: 0.885%; }
+  .home-hot-product__content .card {
+    max-width: 19% !important; }
+  .home-hot-product__content--three-line {
+    white-space: normal;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 15px;
+    -webkit-line-clamp: 3;
+    height: 45px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical; }
+  .home-hot-product__control {
+    font-size: 50px;
+    top: 37%;
+    bottom: 37%;
+    opacity: 0.3;
+    width: 3%;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.15); }
+    .home-hot-product__control i {
+      color: black; }
+  .home-hot-product__control:hover {
+    background: white;
+    opacity: 0.8; }
+
+.home-product-nav--font-14 {
+  font-size: 14px !important; }
+.home-product-nav--font-16 {
+  font-size: 16px !important; }
+
+.home-product--w60 {
+  width: 60% !important; }
+.home-product--w40 {
+  width: 40% !important; }
+.home-product--font-13 {
+  font-size: 13px !important; }
+.home-product--txt-red {
+  color: red; }
+.home-product__shock {
+  position: relative;
+  left: 0;
+  bottom: 20px;
+  display: inline;
+  padding: 2px 6px;
+  text-align: center;
+  white-space: normal;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  background: red;
+  color: white;
+  border-radius: 3px 3px 0px 0px; }
+
+.footer--font {
+  font-size: 11px !important; }
+.footer a {
+  font-size: 14px !important;
+  color: #6c757d;
+  padding-bottom: 4px; }
+.footer p {
+  font-size: 14px !important; }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Banner extends Model
 {
     //
-    public function products (){
+    public function product(){
     	return $this->belongsTo('App\Product');
     }
     public function images(){

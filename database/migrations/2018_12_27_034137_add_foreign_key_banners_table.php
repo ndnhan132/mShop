@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBannersTable extends Migration
+class AddForeignKeyBannersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateBannersTable extends Migration
      */
     public function up()
     {
-        Schema::create('banners', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('description')->nullable();
-            $table->unsignedInteger('product_id');
-            $table->timestamps();
+        Schema::table('banners', function (Blueprint $table) {
+            //->on('categories');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
@@ -28,6 +26,8 @@ class CreateBannersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banners');
+        Schema::table('banners', function (Blueprint $table) {
+            //
+        });
     }
 }

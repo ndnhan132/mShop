@@ -1,6 +1,7 @@
 body {
-    font-family: sans-serif;
+    // font-family: sans-serif;
     background: #eee;
+    font:  Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
     // height: 1000px; 
 }
 
@@ -42,29 +43,119 @@ body {
     }
 }
 
-.banner{
-    &__top{
-
-    }
-    &__bot{
+.homeBanner{
+    &__description{
         list-style-type: none;
-        overflow: hidden;   
-        p{
-            font-size: 12px;
+        overflow-y: hidden;  
+        li div a{
+            font-size: 13px;
             overflow: hidden;
             text-overflow: ellipsis;
-            line-height: 17px;
+            $lineHeight: 19px;
+            line-height: $lineHeight;
             -webkit-line-clamp: 2;
-            height: 34px;
+            height: $lineHeight * 2;
             display: -webkit-box;
             -webkit-box-orient: vertical;
         }
-        transition: all 200ms ease 0s;
-        transform: translate3d(0px, 0px, 0px);
-        &--highlight{
-            p{
-                font-weight: bold!important;
-            }
+    }
+}
+
+.home-hot-product{
+    border:5px solid transparent;
+    border-image: url('/img/khung-noel.png') 5 round;
+    &__header{
+        img{
+            width: 108.0%;
+            margin-top: -30px;
+            margin-left: 0.885%;
         }
+    }
+    &__content{
+        // overflow: auto;
+        // white-space: nowrap;   
+        .card{
+            max-width: 19%!important;
+        }
+        &--three-line{
+            white-space: normal;
+            font-size: 13px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            $line-height: 15px;
+            line-height: $line-height;
+            -webkit-line-clamp: 3;
+            height: $line-height * 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+    }
+    &__control{
+        font-size: 50px;
+        top: 37%;
+        bottom: 37%;
+        opacity:0.3;
+        width: 3%;
+        box-shadow: 0 0 4px 2px rgba(0,0,0,.15);
+        i{
+            color: black;
+        }
+    }
+    &__control:hover{
+        background: white;
+        opacity:0.8;
+    }
+}
+.home-product-nav{
+    &--font-14{
+        font-size: 14px!important;
+    }
+    &--font-16{
+        font-size: 16px!important;
+    }
+}
+
+
+.home-product{
+    &--w60{
+        width: 60%!important;
+    }
+    &--w40{
+        width: 40%!important;
+    }
+    &--font-13{
+        font-size: 13px!important;
+    }
+    &--txt-red{
+        color: red;
+    }
+    &__shock{
+        $line-height: 20px;
+        position: relative;
+        left: 0;
+        bottom: $line-height;
+        display: inline;
+        padding: 2px 6px;
+        text-align: center;
+        white-space: normal;
+        font-size: $line-height - 8;
+        line-height: $line-height;
+        font-weight: bold;
+        background: red;
+        color: white;
+        border-radius: 3px 3px 0px 0px;
+    }
+}
+.footer{
+    &--font{
+        font-size: 11px!important;
+    }
+    a{
+        font-size: 14px!important;
+        color: #6c757d;
+        padding-bottom: 4px;
+    }
+    p{
+        font-size: 14px!important;
     }
 }

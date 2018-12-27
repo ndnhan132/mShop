@@ -34,7 +34,7 @@ class ImagesTableSeeder extends Seeder
     	});
     	//---------------------------------------------
     	$productImages = []; 
-		$dir =  public_path() ."\img\mobile-image";
+		$dir =  public_path() ."/img/mobile-image";
 		$files = File::files($dir);
 		foreach ($files as $f) {
 		 	# code...
@@ -49,9 +49,19 @@ class ImagesTableSeeder extends Seeder
 		 	$img->link = $productImages[array_rand($productImages)];
 		 	Product::inRandomOrder()->first()->images()->save($img);
 		 }
+         Product::all()->each(function($product) use ($productImages){
+            foreach (range(1,4) as $k) {
+                # code...
+            $img = new Image();
+            $img->link = $productImages[array_rand($productImages)];
+            $product->images()->save($img);
+        }
+         });
+
+
          //-------------------------------------
         $bannerImages = []; 
-        $dir = public_path()."\img\banner";
+        $dir = public_path()."/img/banner";
         $files = File::files($dir);
         foreach ($files as $f) {
             # code...

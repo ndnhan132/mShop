@@ -19,5 +19,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'PageController@index')->name('home');
-Route::get('/home', 'PageController@index')->name('home');
+Route::get('/home', 'PageController@index')->name('page.home');
 Route::get('/h', 'PageController@abc')->name('abc');
+Route::get('blade', function () {
+    return view('front.child');
+});
+
+
+Route::prefix('/san-pham')->group(function(){
+	Route::get('/', 'CategoryController@getAllProducts')->name('category.all-product');
+});

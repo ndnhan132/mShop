@@ -13,15 +13,18 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('brand_id');
+            $table->string('long_description');
+            $table->string('short_description')->nullable();
+            $table->integer('price')->unsigned();
+            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('brand_id');
             $table->boolean('top')->default(false);
             $table->boolean('hot')->default(false);
             $table->timestamps();
-
-            // $table->foreign('brand_id')->references('id')->on('brands');
         });
     }
 
