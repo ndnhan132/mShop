@@ -1,6 +1,7 @@
 body {
   background: #eee;
   font: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif; }
+
 .navigation__item {
   border-color: #8FBC8F !important;
   position: relative; }
@@ -107,5 +108,53 @@ body {
   padding-bottom: 4px; }
 .footer p {
   font-size: 14px !important; }
+
+.all-product__option {
+  width: 23%; }
+  .all-product__option a {
+    font-size: 13px; }
+  .all-product__option a:hover {
+    text-decoration: none;
+    color: red !important; }
+  .all-product__option .price-slide-range .slider {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 25px;
+    /* Specified height */
+    background: #d3d3d3;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s; }
+  .all-product__option .price-slide-range .slider:hover {
+    opacity: 1; }
+  .all-product__option .price-slide-range .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #4CAF50;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */ }
+  .all-product__option .price-slide-range .slider::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #4CAF50;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */ }
 
 /*# sourceMappingURL=style.css.map */

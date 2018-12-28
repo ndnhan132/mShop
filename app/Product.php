@@ -16,7 +16,10 @@ class Product extends Model
     public function banner(){
     	return $this->hasOne('App\Banner');
     }
-    public function Category(){
+    public function category(){
         return $this->belongsTo('App\Category');
+    }
+    public function detail(){
+        return $this->hasOne('App\Detail');
     }
 }

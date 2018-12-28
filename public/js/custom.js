@@ -23,4 +23,15 @@ $(document).ready(function($) {
 			
 		}
 	});
+
+	// $('.all-product__option__item').next('ul').hide();
+	$('.all-product__option__item').click(function(event){
+		event.preventDefault();
+		$(this).next('div').slideToggle("slow");
+		// $(this).next('ul').hide();
+		$(this).find("i").toggleClass('fa-chevron-up fa-chevron-down');
+	});
+
+
+
 });
