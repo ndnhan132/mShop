@@ -28,4 +28,7 @@ Route::get('blade', function () {
 
 Route::prefix('/san-pham')->group(function(){
 	Route::get('/', 'CategoryController@getAllProducts')->name('category.all-product');
+
 });
+Route::get('/{id}', 'CategoryController@getProductsByCategoryId')->name('category.product-with-category');
+Route::get('/{idCategory}/{idBrand}', 'CategoryController@getProductsByCategoryAndBrand')->name('category.product-with-category-brand');

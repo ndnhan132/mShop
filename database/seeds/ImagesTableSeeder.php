@@ -39,7 +39,7 @@ class ImagesTableSeeder extends Seeder
 		foreach ($files as $f) {
 		 	# code...
 		 	if(ends_with($f, ['.png', '.jpg', '.jpeg', '.gif'])){
-		 		$productImages[] = "img/mobile-image/" . basename($f);
+		 		$productImages[] = "/img/mobile-image/" . basename($f);
 		 	}
 		 }
 		 // $product = Product::all();
@@ -66,7 +66,7 @@ class ImagesTableSeeder extends Seeder
         foreach ($files as $f) {
             # code...
             if(ends_with($f, ['.png', '.jpg', '.jpeg', '.gif'])){
-                $bannerImages[] ="img/banner/" . basename($f);
+                $bannerImages[] ="/img/banner/" . basename($f);
             }
          }
          Banner::all()->each(function($banner) use ($bannerImages){

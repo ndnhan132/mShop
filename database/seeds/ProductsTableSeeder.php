@@ -28,7 +28,7 @@ class ProductsTableSeeder extends Seeder
             'Hàng giảm giá',
         ];
 
-        foreach(range(1, 90) as $index ){
+        foreach(range(1, 300) as $index ){
             $category = Category::inRandomOrder()->first();
             $brand= Brand::inRandomOrder()->first();
         	Product::create([

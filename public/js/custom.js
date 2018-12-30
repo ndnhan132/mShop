@@ -32,6 +32,12 @@ $(document).ready(function($) {
 		$(this).find("i").toggleClass('fa-chevron-up fa-chevron-down');
 	});
 
-
+	$('#js-min-price,#js-max-price').on("keyup" , function(event) {
+		$(this).val(
+			$(this).val().split("").map(function(item){
+				return !isNaN(item) ? item : '';
+			}).join('')
+		)
+	});
 
 });

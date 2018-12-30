@@ -15,10 +15,22 @@ class CategoryController extends Controller
         view()->share('categories', $categories);
 		view()->share('brands', $brands);
 	}
-    public function getProductsById($id){
-    	return view('front.all-product');
+    public function getProductsByCategoryId($id){
+        $products = Product::with('images')
+                            ->with('detail')
+                            ->where('category_id', $id)
+                            ->get();
+    	return view('front.all-product', ['products'=>$products]);
     }
     public function getAllProducts(){
     	return view('front.all-product',['products'=>Product::with('images')->with('detail')->get()]);
+    }
+    public function getProductsByCategoryAndBrand($idCategory, $idBrand){
+        $products = Product::with('images')
+                            ->with('detail')
+                            ->where('category_id', $idCategory)
+                            ->where('brand_id', $idBrand)
+                            ->get();
+        return view('front.all-product', ['products'=>$products]);
     }
 }

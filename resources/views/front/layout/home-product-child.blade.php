@@ -56,24 +56,11 @@
 			@foreach($category->products->sortBy('created_at') as $key => $product)
 			@if($key > 0 && $key <= 6)
 			<div class="w-100">
-				<div class="card col-sm-4 float-left pb-2 pt-3 px-3 rounded-0 border-bottom-0 border-right-0">
-					<a href="" class="card-link">
-						<div class="w-100">
-							<img class="card-img-top img-fluid px-4" src="{{ $product->images->random()->link}}" alt="Card image cap">
-							<div class="home-product__shock">
-								{{ $product->short_description }}
-							</div>
-						</div>
-						<div class="card-body text-dark px-1 pb-0 pt-0">
-							<p class="card-title text-capitalize text-truncate text-left mb-0">
-								{{ $product->name}}
-							</p>
-							<p class="card-text text-left font-weight-bold home-product--font-13 home-product--txt-red">
-								{{ number_format($product->price, '0',',','.')}} ₫
-							</p>
-						</div>
-					</a>
-				</div>
+				<a href="">
+					<div class="col-sm-4 p-0 float-left border-top border-left p-3 pb-4">
+						@include('front.layout.one-product', ['product'=> $product])
+					</div>
+				</a>
 			</div>
 			@elseif($key > 6)
 			@break

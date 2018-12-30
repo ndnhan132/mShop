@@ -10,8 +10,8 @@
 		</h6>
 	</div>
 
-	<div class="d-flex flex-row bg-white" style="height: 1111px">
-		<div class="border px-0 all-product__option">
+	<div class="d-flex flex-row bg-white">
+		<div class="px-0 all-product__option">
 
 			<div class="border-bottom pb-0">
 				<div class="w-100 all-product__option__item btn d-flex flex-row justify-content-between align-items-center">
@@ -23,7 +23,7 @@
 				<div class="w-100">
 					@foreach($categories as $category)
 					<div class=" py-1 px-4 text-capitalize">
-						<a href="" class="text-dark">
+						<a href="{{ route('category.product-with-category' , $category->id) }}" class="text-dark">
 							{{ $category->name }}
 						</a>
 					</div>
@@ -65,11 +65,11 @@
 					</div>
 
 					<div class="w-100">
-						<div class="d-flex flex-column">
-							<div class="price-slide-range w-100">
-								<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-							</div>
+						<div class="d-flex flex-row all-product__option__price form-group m-0">
+							<input type="text" name=""  value="0" class="form-control" id="js-min-price">
+							<input type="text" name="" id="js-max-price"  value="99999999" class="form-control">
 						</div>
+						<input type="submit" name="" value="TIM">
 					</div>
 				</div>
 
@@ -92,8 +92,17 @@
 			</form>
 
 		</div>
-		<div class="col-sm-6">
-
+		<div class="all-product__view d-flex flex-column">
+			{{-- {{ var_dump($products) }} --}}
+			<div class="w-100 d-block border-bottom border-left">
+				@foreach($products as $product)
+				<a href="">
+					<div class="col-sm-4 float-left p-3 border-top border-right">
+						@include('front.layout.one-product', ['product'=>$product])
+					</div>
+				</a>
+				@endforeach
+			</div>
 		</div>
 	</div>
 </div>	
