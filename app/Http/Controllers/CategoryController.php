@@ -33,4 +33,15 @@ class CategoryController extends Controller
                             ->get();
         return view('front.all-product', ['products'=>$products]);
     }
+    public function loc($idCategory ,Request $request){
+        $this->validate($request, []);
+        $min = $request->input('min-price');
+        $max = $request->input('max-price');
+        $products=Product::with('images')
+                         ->with('detail')
+                         ->where('category_id', $idCategory)
+                         ->whereBetween('price', [$min , $max])
+                         ->get();
+        return view('front.all-product', ['products'=>$products]);            
+    }
 }

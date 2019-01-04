@@ -26,9 +26,20 @@ Route::get('blade', function () {
 });
 
 
-Route::prefix('/san-pham')->group(function(){
-	Route::get('/', 'CategoryController@getAllProducts')->name('category.all-product');
+// Route::prefix('/san-pham')->group(function(){
+// 	Route::get('/', 'CategoryController@getAllProducts')->name('category.all-product');
 
+// });
+// Route::get('/{id}', 'CategoryController@getProductsByCategoryId')->name('category.product-with-category');
+// Route::get('/{idCategory}/{idBrand}', 'CategoryController@getProductsByCategoryAndBrand')->name('category.product-with-category-brand');
+// Route::get('/{idCategory}/{idBrand}', 'CategoryController@getProductsByCategoryAndBrand')->name('category.product-with-category-brand');
+
+// Route::post('/{id}/loc', 'CategoryController@loc')->name('locsp');
+
+
+Route::get('/one', function () {
+    return view('one');
 });
-Route::get('/{id}', 'CategoryController@getProductsByCategoryId')->name('category.product-with-category');
-Route::get('/{idCategory}/{idBrand}', 'CategoryController@getProductsByCategoryAndBrand')->name('category.product-with-category-brand');
+Route::get('/two', function () {
+    return view('two');
+});

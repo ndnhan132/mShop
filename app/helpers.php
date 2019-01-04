@@ -14,3 +14,17 @@ if(!function_exists('echoTxt')){
 		return $txt;
 	}
 }
+
+// if(!function_exists('getCategoryFromProducts')){
+// 	function getCategoryFromProducts(App\Product $products){
+// 		$categoryId = $products->first()->category_id;
+// 		foreach ($products as $c_id) {
+// 			# code...
+// 			if($categoryId !== $c_id) {
+// 				return 'all' ;
+// 			}
+// 		}
+// 		return $categoryId;
+
+// 	}
+// }

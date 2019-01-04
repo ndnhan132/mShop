@@ -1,5 +1,16 @@
 @extends('front.layout.master')
 @section('content') 
+
+
+@php
+	// $cat_id = getCategoryFromProducts($products);
+	// dd($cat_id);
+
+@endphp
+
+
+
+
 <div class="d-flex flex-column">
 	<div class="w-100 d-flex flex-row justify-content-start ali align-items-center">
 		<h5 class="py-1 text-uppercase border-bottom border-danger my-0">
@@ -30,9 +41,10 @@
 					@endforeach
 				</div>
 			</div>
+			<form action="{{ route('locsp', 2) }}" method="post">
+				<input type="hidden" name="_method" value="post" />
+				{{ csrf_field() }}
 
-
-			<form>
 				<div class="form-group border-bottom pb-3 m-0">
 					<div class="w-100 all-product__option__item btn d-flex flex-row justify-content-between align-items-center">
 						<span class="text-capitalize">
@@ -55,7 +67,6 @@
 						</div>
 					</div>
 				</div>
-				
 				<div class="form-group border-bottom pb-3 m-0">
 					<div class="w-100 all-product__option__item btn d-flex flex-row justify-content-between align-items-center">
 						<span class="text-capitalize">
@@ -66,15 +77,15 @@
 
 					<div class="w-100">
 						<div class="d-flex flex-row all-product__option__price form-group m-0">
-							<input type="text" name=""  value="0" class="form-control" id="js-min-price">
-							<input type="text" name="" id="js-max-price"  value="99999999" class="form-control">
+							<input type="text" name="min-price"  value="0" class="form-control" id="js-min-price">
+							<input type="text" name="max-price" id="js-max-price"  value="99999999" class="form-control">
 						</div>
-						<input type="submit" name="" value="TIM">
+						<button type="submit" >TIM</button>
 					</div>
 				</div>
 
 
-
+{{-- 
 				<div class="form-group border-bottom pb-0 m-0">
 					man hinh
 				</div>
@@ -88,13 +99,14 @@
 					
 				</div>
 				
-
+				--}}
 			</form>
 
 		</div>
 		<div class="all-product__view d-flex flex-column">
 			{{-- {{ var_dump($products) }} --}}
 			<div class="w-100 d-block border-bottom border-left">
+
 				@foreach($products as $product)
 				<a href="">
 					<div class="col-sm-4 float-left p-3 border-top border-right">
